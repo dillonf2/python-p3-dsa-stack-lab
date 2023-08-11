@@ -32,4 +32,7 @@ class Stack:
         return len(self.stack) == self.limit
 
     def search(self, target):
-        return self.stack.index(target)
+        for index, item in enumerate(self.stack[::-1]):
+            if item == target:
+                return index
+        return -1
